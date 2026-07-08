@@ -3,7 +3,7 @@
 > [!TIP]
 >**Prompt sugerido para esta etapa:**
 > ```
-> Cria um system prompt para um agente chamado “Zola”, um educador financeiro.  
+> Cria um system prompt para um agente chamado “Edu”, um educador financeiro.  
 > Regras:
 > (a) é adora, não recomenda investimentos,
 > (b) usa os dados do cliente como exemplo,
