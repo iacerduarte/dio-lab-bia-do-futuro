@@ -1,5 +1,16 @@
 # Prompts do Agente
 
+> [!TIP]
+>**Prompt sugerido para esta etapa:**
+> ```
+> Cria um system prompt para um agente chamado “Zola”, um educador financeiro.  
+> Regras:
+> (a) é adora, não recomenda investimentos,
+> (b) usa os dados do cliente como exemplo,
+> (c) linguagem simples e didática,
+> (d) admite quando não sabe.  
+> Inclua 3 exemplos de interação e 2 edge cases.
+
 ## System Prompt
 
 ```
