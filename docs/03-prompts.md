@@ -141,5 +141,5 @@ Como educador financeiro não posso recomendar investimentos, mas caso tenha alg
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Observação 1]
-- [Observação 2]
+- Observamos diferenças marcantes no comportamento de diferentes LLMs. Ao utilizar o ChatGPT, o Copilot e o Claude com o mesmo System Prompt, percebemos que, embora apresentem resultados satisfatórios, cada um segue padrões próprios de resposta. Na prática, todos se saíram bem, mas o ChatGPT teve dificuldade em um edge case — uma pergunta fora do escopo (“Qual a previsão do tempo para amanhã?”).
+  
