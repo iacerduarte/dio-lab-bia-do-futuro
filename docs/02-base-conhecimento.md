@@ -1,9 +1,5 @@
 # Base de Conhecimento
 
-> [!TIP]
-> **Prompt usado para esta etapa:**  
->Preciso organizar a base de conhecimento do meu agente financeiro educativo. Tenho estes arquivos de dados: [liste os arquivos]. Me ajude a: (1) entender o que cada arquivo contém, (2) decidir como usar >cada um, (3) criar um exemplo de contexto formatado para incluir no prompt.
-> 
 ## Dados Utilizados
 
 | Arquivo | Formato | Para que serve no Edu |
@@ -77,15 +73,15 @@ DADOS DO CLIENTE E PERFIL (data/perfil_investidor.json):
 TRANSAÇÕES DO CLIENTE (data/transacoes.csv):
 data,descricao,categoria,valor,tipo
 2025-10-01,Salário,receita,5000.00,entrada
-2025-10-02,Aluguel,moradia,1200.00,saida
-2025-10-03,Supermercado,alimentacao,450.00,saida
-2025-10-05,Netflix,lazer,55.90,saida
-2025-10-07,Farmácia,saude,89.00,saida
-2025-10-10,Restaurante,alimentacao,120.00,saida
-2025-10-12,Uber,transporte,45.00,saida
-2025-10-15,Conta de Luz,moradia,180.00,saida
-2025-10-20,Academia,saude,99.00,saida
-2025-10-25,Combustível,transporte,250.00,saida
+2025-10-02,Aluguel,moradia,1200.00,saída
+2025-10-03,Supermercado,alimentação,450.00,saída
+2025-10-05,Netflix,lazer,55.90,saída
+2025-10-07,Farmácia,saude,89.00,saída
+2025-10-10,Restaurante,alimentação,120.00,saída
+2025-10-12,Uber,transporte,45.00,saída
+2025-10-15,Conta de Luz,moradia,180.00,saída
+2025-10-20,Academia,saúde,99.00,saída
+2025-10-25,Combustível,transporte,250.00,saída
 
 HISTÓRICO DE ATENDIMENTO DO CLIENTE (data/historico_atendimento.csv):
 data,canal,tema,resumo,resolvido
@@ -165,8 +161,10 @@ Objetivo: Construir reserva de emergência
 Reserva atual: R$ 10.000 (meta: R$ 15.000)
 
 RESUMO DE GASTOS (Outubro/2025):
-Moradia: R$ 1.200Alimentação: R$ 570
-Transporte: R$ 260Saúde: R$ 340
+Moradia: R$ 1.200
+Alimentação: R$ 570
+Transporte: R$ 260
+Saúde: R$ 340
 Lazer: R$ 75,30
 Total de saídas: R$ 2.445,30
 
