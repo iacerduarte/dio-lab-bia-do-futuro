@@ -1,149 +1,97 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💸 Efi - Educador Financeiro Inteligente
 
-## Contexto
-
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+O **Efi** (ou **Edu**) é um agente de Inteligência Artificial Generativa focado em educação e alfabetização financeira em linguagem acessível. A solução atua como um professor particular de finanças pessoais 24 horas por dia, ensinando conceitos, explicando dinâmicas de mercado e contextualizando o aprendizado prático a partir da análise segura de dados históricos do próprio usuário, sem jamais realizar recomendações de investimento.
 
 ---
 
-## O Que Você Deve Entregar
+## 🎯 Caso de Uso e Escopo
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+*   **Problema:** Grande parte dos brasileiros (como indicado por mais de 60% que desconhecem o funcionamento de reservas de emergência) carecem de letramento financeiro de forma intuitiva, sentindo barreiras ou intimidação técnico-formal.
+*   **Solução:** Um agente financeiro consultivo e didático que decodifica termos de mercado (como CDI, Selic, FIIs), analisa hábitos de gastos baseados em transações reais do cliente e orienta a estruturação de metas, garantindo uma abordagem amigável e puramente educativa.
+*   **Persona:** **Edu**, um educador financeiro empático, didático, paciente e informal. Ele atua sob premissas rígidas de segurança, admitindo limitações de conhecimento sempre que necessário.
 
 ---
 
-### 2. Base de Conhecimento
+## 🛠️ Arquitetura e Componentes da Solução
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+O projeto foi construído empregando uma abordagem baseada em IA Generativa de execução **100% local**, conferindo total privacidade e custo zero de infraestrutura de nuvem.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+```mermaid
+flowchart TD
+    A[Usuário] --> B["Streamlit (Interface Visual)"]
+    B --> C["Ollama (Motor de LLM Local)"]
+    C --> D["Base de Conhecimento (CSV/JSON)"]
+    D --> C
+    C --> E["Filtros de Segurança (Anti-Alucinação)"]
+    E --> F["Resposta Didática do Edu"]
+    F --> B
+```
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+*   **Interface Front-End:** [Streamlit](https://streamlit.io/) estruturado para uma experiência fluida de chat interativo.
+*   **Motor de Inferência:** [Ollama](https://ollama.ai/) rodando localmente o modelo `phi4-mini`.
+*   **Orquestração e Contexto:** Injeção dinâmica estruturada via scripts em Python (`pandas` e `json`), gerando prompts contextualizados com zero-shot e few-shot learning integrados.
 
 ---
 
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 📂 Estrutura Atual do Repositório
 
 ```
 📁 lab-agente-financeiro/
 │
-├── 📄 README.md
+├── 📄 README.md                      # Apresentação geral do projeto Efi
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── 📁 data/                          # Base de Conhecimento
+│   ├── historico_atendimento.csv     # Continuidade de interações passadas
+│   ├── perfil_investidor.json        # Objetivos, metas e perfil do cliente
+│   ├── produtos_financeiros.json     # Catálogo conceitual (ex: FIIs, CDB, Selic)
+│   └── transacoes.csv                # Histórico de receitas e despesas
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── 📁 docs/                          # Documentação completa de desenvolvimento
+│   ├── 01-documentacao-agente.md     # Detalhamento de personas e arquitetura
+│   ├── 02-base-conhecimento.md       # Estratégia de modelagem de dados e contexto
+│   ├── 03-prompts.md                 # Engenharia de prompts e tratamento de Edge Cases
+│   ├── 04-metricas.md                # Resultados de testes e validação de qualidade
+│   └── 05-pitch.md                   # Roteiro do Pitch comercial
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── 📁 src/                           # Código-fonte da aplicação funcional
+│   └── app.py                        # Execução da interface Streamlit e conexão Ollama
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+└── 📁 assets/                        # Diagramas e recursos visuais
 ```
 
 ---
 
-## Dicas Finais
+## 🛡️ Engenharia de Prompts & Estratégias de Segurança
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+O comportamento do **Edu** é blindado por um `SYSTEM_PROMPT` estruturado que define estritamente o seu domínio. 
+
+### Diretrizes Anti-Alucinação Adotadas:
+1.  **Bloqueio de Recomendação:** NUNCA prescreve ou recomenda a compra de ativos/produtos. Ele apenas explica e traduz a mecânica de funcionamento.
+2.  **Restrição de Domínio:** Perguntas fora do escopo de finanças domésticas (ex: previsão do tempo, perguntas gerais) são educadamente recusadas.
+3.  **Privacidade de Dados:** Nega terminantemente qualquer fornecimento ou manipulação de informações confidenciais ou sensíveis (como senhas).
+
+---
+
+## 📈 Avaliação e Resultados
+
+A solução passou por baterias de testes focados em três pilares analíticos: **Assertividade**, **Segurança** e **Coerência**.
+
+*   **Destaques Positivos:** Respostas rápidas e eficientes rodando em hardware local; alta aderência às diretrizes de tom de voz; recusa correta de edge cases perigosos ou fora de escopo.
+*   **Oportunidades de Evolução:** Implementação futura de histórico persistente de conversas (memória de longo prazo) e otimização do tempo inicial de aquecimento do modelo no Ollama.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1.  Certifique-se de possuir o **Ollama** instalado e o modelo `phi4-mini` baixado:
+    ```bash
+    ollama run phi4-mini
+    ```
+2.  Instale as dependências da aplicação Python:
+    ```bash
+    pip install streamlit pandas requests
+    ```
+3.  Inicie o servidor do Streamlit a partir da raiz do projeto:
+    ```bash
+    streamlit run src/app.py
+    ```
