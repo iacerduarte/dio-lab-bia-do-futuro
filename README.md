@@ -1,6 +1,6 @@
 # 💸 Efi - Educador Financeiro Inteligente
 
-O **Efi** (ou **Edu**) é um agente de Inteligência Artificial Generativa focado em educação e alfabetização financeira em linguagem acessível. A solução atua como um professor particular de finanças pessoais 24 horas por dia, ensinando conceitos, explicando dinâmicas de mercado e contextualizando o aprendizado prático a partir da análise segura de dados históricos do próprio usuário, sem jamais realizar recomendações de investimento.
+O **Efi** é um agente de Inteligência Artificial Generativa focado em educação e alfabetização financeira em linguagem acessível. A solução atua como um professor particular de finanças pessoais 24 horas por dia, ensinando conceitos, explicando dinâmicas de mercado e contextualizando o aprendizado prático a partir da análise segura de dados históricos do próprio usuário, sem jamais realizar recomendações de investimento.
 
 ---
 
