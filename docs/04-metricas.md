@@ -46,16 +46,19 @@ Crie testes simples para validar seu agente:
 - **Resposta esperada:** Agente admite não ter essa informação
 - **Resultado:** [X] Correto  [ ] Incorreto
 
+---
+```
+```
 ## Formulário de Feedback 
-
 
 Use com os participantes do teste:
 
+
 | Métrica       | Pergunta                                         | Nota (1–5) |
-|----------------|--------------------------------------------------|:-------------:|
-| Assertividade  | A resposta respondeu sua pergunta?               |  [       ] |
-| Segurança      | As informações pareceram confiáveis?             |  [       ] |
-| Coerência      | A linguagem foi clara e fácil de entender?       |  [       ] |
+|----------------|--------------------------------------------------|--------|
+| Assertividade  | A resposta respondeu sua pergunta?               |  [   ] |
+| Segurança      | As informações pareceram confiáveis?             |  [   ] |
+| Coerência      | A linguagem foi clara e fácil de entender?       |  [   ] |
 
 **Comentário aberto:** O que poderia melhorar?
 
@@ -95,3 +98,5 @@ Para quem quer explorar mais, algumas métricas técnicas de observabilidade tam
 - Logs e taxa de erros.
 
 Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+
+---
