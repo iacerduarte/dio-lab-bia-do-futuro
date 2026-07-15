@@ -47,8 +47,7 @@ Crie testes simples para validar seu agente:
 - **Resultado:** [X] Correto  [ ] Incorreto
 
 ---
-```
-```
+
 ## Formulário de Feedback 
 
 Use com os participantes do teste:
